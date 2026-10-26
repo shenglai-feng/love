@@ -10,7 +10,22 @@
   </style>
 </head>
 <body>
-  <canvas id="canvas"></canvas>
+  <canvas id="canvas"></canvas><!-- 跳转到第二页的互动按钮 -->
+<div style="position: absolute; bottom: 10%; width: 100%; text-align: center; z-index: 99;">
+  <a href="page2.html" style="
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: rgba(255, 77, 109, 0.8);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-family: 'Microsoft YaHei', sans-serif;
+    box-shadow: 0 0 15px rgba(255, 77, 109, 0.8);
+    backdrop-filter: blur(5px);
+  ">
+    点我进入下一页 💌
+  </a>
+</div>
   <script>
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
