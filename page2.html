@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>一封信</title>
+  <title>给我留言</title>
   <style>
     body {
       background-color: #ffe6e6; /* 浅粉色背景 */
@@ -11,36 +11,73 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       margin: 0;
-      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
     }
     .card {
       background: white;
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      max-width: 80%;
+      width: 100%;
+      max-width: 400px;
     }
-    h1 { color: #ff4d6d; }
-    p { color: #555; line-height: 1.6; }
-    a {
-      display: inline-block;
-      margin-top: 20px;
-      color: #ff4d6d;
-      text-decoration: none;
+    h1 { color: #ff4d6d; text-align: center; margin-top: 0; }
+    label { display: block; margin-bottom: 5px; color: #555; font-weight: bold; font-size: 14px;}
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    textarea { height: 120px; resize: vertical; }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
       font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover { background-color: #e63956; }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      color: #999;
+      text-decoration: none;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
+
   <div class="card">
-    <h1>❤️ 欢迎来到第二页</h1>
-    <p>这里你可以写上想对客户说的悄悄话，或者放上几张你们的合照。</p>
-    <p>因为 GitHub Pages 是静态的，这里的互动只能靠前端代码（比如点开弹窗、播放音乐）。</p>
+    <h1>💌 写点什么吧</h1>
     
-    <!-- 返回主页的按钮 -->
-    <a href="index.html">← 返回最初的爱心</a>
+    <!-- ⚠️ 注意：把 action 里的链接换成你自己的 Formspree 链接 -->
+    <form action="https://formspree.io/f/你的专属ID" method="POST">
+      
+      <label>你的名字 / 昵称</label>
+      <input type="text" name="name" placeholder="让我知道你是谁" required>
+
+      <label>你的留言 / 悄悄话</label>
+      <textarea name="message" placeholder="在这里写下你想说的话..." required></textarea>
+
+      <button type="submit">发送到我的邮箱 🚀</button>
+    </form>
+
+    <a href="index.html" class="back-link">← 返回最初的爱心</a>
   </div>
+
 </body>
 </html>
